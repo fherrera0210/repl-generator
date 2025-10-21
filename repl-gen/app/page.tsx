@@ -579,7 +579,7 @@ function insertRedirects(source){
                       {rows.map((row, index) => {
                         const hasError = rowErrors[index] && rowErrors[index].length > 0
                         return (
-                          <>
+                          <Fragment key={index}>
                             <tr
                               key={index}
                               className={`border-b border-border hover:bg-accent/50 ${hasError ? "bg-red-500/10 border-red-500/50" : ""}`}
@@ -633,7 +633,7 @@ function insertRedirects(source){
                                 </td>
                               </tr>
                             )}
-                          </>
+                          </Fragment>
                         )
                       })}
                     </tbody>
