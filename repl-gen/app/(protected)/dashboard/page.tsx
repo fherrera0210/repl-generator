@@ -472,7 +472,7 @@ function insertRedirects(source){
       setIsProcessing(false)
 
       toast({
-        title: "Script Generated",
+        title: "REPL Script Generated",
         description: `Import script with ${rows.length} entries created successfully!`,
       })
     }, 0)
@@ -481,7 +481,7 @@ function insertRedirects(source){
   const copyToClipboard = async () => {
     if (!generatedScript) {
       toast({
-        title: "No Script",
+        title: "No REPL Script yet",
         description: "Please generate a script first",
         variant: "destructive",
       })
@@ -492,7 +492,7 @@ function insertRedirects(source){
       await navigator.clipboard.writeText(generatedScript)
       toast({
         title: "Copied",
-        description: "Script copied to clipboard",
+        description: "REPL Script copied to clipboard",
       })
     } catch (err) {
       toast({
@@ -536,7 +536,7 @@ function insertRedirects(source){
       <div className="bg-background text-foreground">
         {/* Header with Theme Toggle */}
         <div className="flex justify-between items-center p-4 border-b border-border">
-          <h1 className="text-2xl font-bold">URL Script Generator</h1>
+          <h1 className="text-2xl font-bold">Bulk Sitelink Redirects REPL Generator</h1>
           <button
             onClick={toggleTheme}
             className="p-2 rounded-lg hover:bg-accent transition-colors"
@@ -549,11 +549,11 @@ function insertRedirects(source){
         <div className="p-6 max-w-6xl mx-auto">
           {/* Action Buttons */}
           <div className="flex gap-3 mb-6">
-          <Button onClick={clearTable} variant="destructive">
+            <Button onClick={clearTable} variant="destructive">
               <Trash2 size={16} className="mr-2" />
               Clear Table
             </Button>
-            
+
             <Button onClick={createImportScript} disabled={isProcessing} className="bg-primary">
               Create Import
             </Button>
@@ -572,11 +572,11 @@ function insertRedirects(source){
             </Button>
           </div>
 
-          {/* Generated Script Display */}
+          {/* Generated REPL Display */}
           {generatedScript && (
             <Card className="p-6 border border-border mb-6">
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-lg font-semibold text-foreground">Generated Script</h2>
+                <h2 className="text-lg font-semibold text-foreground">Generated REPL Script</h2>
                 <button
                   onClick={() => setIsScriptExpanded(!isScriptExpanded)}
                   className="p-1 hover:bg-accent rounded transition-colors"
