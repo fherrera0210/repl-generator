@@ -16,7 +16,7 @@ const isValidPath = (path: string) => {
 
 export default function App() {
   const { toast } = useToast()
-  const [theme, setTheme] = useState<"light" | "dark">("dark")
+  const [theme, setTheme] = useState<"light" | "dark">("light")
   const [isProcessing, setIsProcessing] = useState(false)
   const [isTableExpanded, setIsTableExpanded] = useState(true)
   const [isScriptExpanded, setIsScriptExpanded] = useState(true)
@@ -536,7 +536,7 @@ function insertRedirects(source){
       <div className="bg-background text-foreground">
         {/* Header with Theme Toggle */}
         <div className="flex justify-between items-center p-4 border-b border-border">
-          <h1 className="text-2xl font-bold">Bulk Sitelink Redirects REPL Generator</h1>
+          <h1 className="mx-auto text-2xl font-bold">Bulk Sitelink Redirects REPL Generator</h1>
           <button
             onClick={toggleTheme}
             className="p-2 rounded-lg hover:bg-accent transition-colors"
