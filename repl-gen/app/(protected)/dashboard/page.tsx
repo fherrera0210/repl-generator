@@ -10,7 +10,8 @@ import { Moon, Sun, Copy, Trash2, ChevronDown, ChevronUp, AlertCircle } from 'lu
 const isValidPath = (path: string) => {
   if (!path.trim()) return false
   if (path.includes("http://") || path.includes("https://")) return false
-  if (path.match(/\.[a-z]{2,}/i)) return false
+  if (!path.startsWith('/')) return false;
+  if (path.match(/^[a-z0-9-]+\.(com|org|net|co|uk|dev|io|app)$/i)) return false
   return true
 }
 
